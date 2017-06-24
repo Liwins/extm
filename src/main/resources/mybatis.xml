@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <environments default="mysqlEM">
+        <environment id="mysqlEM">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://www.riversky.club:3306/extmail"/>
+                <property name="username" value="root"/>
+                <property name="password" value="riversky"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="cn/riversky/extmail/entity/mapper.xml"/>
+    </mappers>
+</configuration>

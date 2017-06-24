@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xxx">
+    <insert id="insertMailBox" parameterType="cn.riversky.extmail.entity.MailBox">
+        insert into mailbox(username,uid,password,clearpwd,name,maildir,homedir,domain,quota,netdiskquota,question,answer,disablepwdchange,disablesmtpd,disablesmtp,disablewebmail,disablenetdisk,disableimap,disablepop3) values (#{username},#{uid},#{password},#{clearpwd},#{name},#{mailhost},#{homedir},#{domain},#{quota},#{netdiskquota},#{question},#{answer},0,0,0,0,0,1,0)
+    </insert>
+    <delete id="deleteAllmailBox" parameterType="cn.riversky.extmail.entity.MailBox">
+        DELETE  FROM mailbox where domain="test.cn"
+    </delete>
+</mapper>
